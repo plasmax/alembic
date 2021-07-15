@@ -1,7 +1,7 @@
 # action.yml
-name: 'Python 3.7 aswf Wheel'
+name: 'Python manylinux wheel based on awsf/ci-usd'
 author: 'Max Last'
-description: 'Build manylinux wheels for a (Cython) Python package'
+description: 'Build manylinux wheels for a Python package'
 runs:
   using: 'docker'
   image: 'Dockerfile'
