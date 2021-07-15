@@ -2,6 +2,4 @@
 name: 'Python manylinux wheel based on awsf/ci-usd'
 author: 'Max Last'
 description: 'Build manylinux wheels for a Python package'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+run: docker build --build-arg USDIMAGE=$USDIMAGE .
