@@ -15,10 +15,10 @@ jobs:
         include:
           - python-version: 2.7
             plat: manylinux2010_x86_64
-            image: aswf/ci-usd:2019.9
+            usdimage: 2019.9
           - python-version: 3.7
             plat: manylinux_2_17_x86_64
-            image: aswf/ci-usd:2021.6
+            usdimage: 2021.6
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: Build PyAlembic Manylinux Wheel
         env:
           PLAT: ${{ matrix.plat }}
-          IMAGE: ${{ matrix.image }}
+          USDIMAGE: ${{ matrix.usdimage }}
         uses: ./.github/actions/build-aswf
 
       # Upload wheel as artifact

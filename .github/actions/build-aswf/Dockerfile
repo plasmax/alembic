@@ -1,4 +1,4 @@
-FROM ${IMAGE}
+FROM aswf/ci-usd:$USDIMAGE
 
 # install dependencies
 RUN yum install -y patchelf
