@@ -14,7 +14,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.usd-image }}.
+    - run: docker build -t pyalembic --build-args USDIMAGE="${{ inputs.usd-image }}" PLAT="${{ inputs.usd-image }}" .
       shell: bash
-    - run: echo Hello ${{ inputs.plat }}.
+    - run: docker run pyalembic
       shell: bash

@@ -1,4 +1,6 @@
-FROM aswf/ci-usd:2019.9
+ARG USDIMAGE
+ARG PLAT
+FROM aswf/ci-usd:$USDIMAGE
 
 # install auditwheel and dependency
 RUN yum install -y patchelf
@@ -13,7 +15,7 @@ RUN make
 RUN make install
 
 # Setup dev environment
-ENV PLAT manylinux2010_x86_64
+ENV PLAT $PLAT
 
 # Copy build script and build
 COPY build_alembic.sh /entrypoint.sh
