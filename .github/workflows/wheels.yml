@@ -30,7 +30,7 @@ jobs:
         env:
           PLAT: ${{ matrix.plat }}
           USDIMAGE: ${{ matrix.usdimage }}
-        uses: ./.github/actions/build-aswf
+        run: cd ./.github/actions/build-aswf && docker build -t pyalembic-wheel --build-arg USDIMAGE=$USDIMAGE . && docker run pyalembic-wheel
 
       # Upload wheel as artifact
       - uses: actions/upload-artifact@v2

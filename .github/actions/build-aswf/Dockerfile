@@ -1,4 +1,5 @@
 ARG USDIMAGE
+ARG PLAT
 FROM aswf/ci-usd:$USDIMAGE
 
 # install dependencies
