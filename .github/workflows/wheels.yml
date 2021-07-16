@@ -31,6 +31,7 @@ jobs:
         uses: ./.github/actions/build-aswf
         with:
           usd-image: ${{ matrix.usdimage }}
+          plat: ${{ matrix.plat }}
 
       # Upload wheel as artifact
       - uses: actions/upload-artifact@v2

@@ -8,6 +8,10 @@ inputs:
     description: 'Which ci-usd image to use, e.g. 2019.9 or 2021.6'
     required: true
 
-runs: 
-  using: 'docker'
-  image: 'Dockerfile.${{ inputs.usd-image }}'
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello ${{ inputs.usd-image }}.
+      shell: bash
+    - run: echo Hello ${{ inputs.usd-image }}.
+      shell: bash
