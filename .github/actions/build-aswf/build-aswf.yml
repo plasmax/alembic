@@ -5,3 +5,4 @@ description: 'Build manylinux wheels for a Python package'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  build-args: USDIMAGE=$USDIMAGE PLAT=$PLAT
