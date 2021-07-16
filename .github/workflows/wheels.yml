@@ -27,10 +27,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Use the alembic build action of this repo
-        env:
-          PLAT: ${{ matrix.plat }}
-          USDIMAGE: ${{ matrix.usdimage }}
-        run: cd ./.github/actions/build-aswf && docker build -t pyalembic-wheel --build-arg USDIMAGE=$USDIMAGE . && docker run pyalembic-wheel
+        uses: ./.github/actions/build-aswf
+        with:
+          build-args: USDIMAGE=${{ matrix.usdimage }} PLAT=${{ matrix.plat }}
 
       # Upload wheel as artifact
       - uses: actions/upload-artifact@v2

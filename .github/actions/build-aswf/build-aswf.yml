@@ -1,5 +1,7 @@
 # action.yml
 name: 'Python manylinux wheel based on awsf/ci-usd'
-author: 'Max Last'
+author: 'Stefan Jeske, Max Last'
 description: 'Build manylinux wheels for a Python package'
-run: echo "Testing... is this thing on?"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
