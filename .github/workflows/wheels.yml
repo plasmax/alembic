@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build Alembic Wheel using Docker
-        uses: ./.github/actions/build-python3.7
+      - uses: ./.github/actions/build-python3.7
       - uses: actions/upload-artifact@v2
         with:
           name: wheel
