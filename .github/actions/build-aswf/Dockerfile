@@ -2,7 +2,7 @@ ARG USDIMAGE
 ARG PLAT
 FROM aswf/ci-usd:$USDIMAGE
 
-# install dependencies
+# install auditwheel and dependency
 RUN yum install -y patchelf
 RUN pip install auditwheel
 

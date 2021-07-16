@@ -29,7 +29,9 @@ jobs:
       - name: Use the alembic build action of this repo
         uses: ./.github/actions/build-aswf
         with:
-          build-args: USDIMAGE=${{ matrix.usdimage }} PLAT=${{ matrix.plat }}
+          build-args: 
+            - USDIMAGE=${{ matrix.usdimage }} 
+            - PLAT=${{ matrix.plat }}
 
       # Upload wheel as artifact
       - uses: actions/upload-artifact@v2
