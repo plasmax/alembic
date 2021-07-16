@@ -73,6 +73,7 @@ class CMakeBuild(build_ext):
                 if not os.path.isfile(package_path):
                     continue
                 shutil.copyfile(package_path, os.path.join(extdir, package))
+                print("Copying %s" % package_path)
                 del missing_packages[missing_packages.index(package)]
                 break
 
