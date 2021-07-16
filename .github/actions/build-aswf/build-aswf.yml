@@ -4,5 +4,6 @@ author: 'Stefan Jeske, Max Last'
 description: 'Build manylinux wheels for a Python package'
 runs:
   using: 'docker'
+  with:
+    build-args: USDIMAGE=$USDIMAGE PLAT=$PLAT
   image: 'Dockerfile'
-  build-args: USDIMAGE=$USDIMAGE PLAT=$PLAT
