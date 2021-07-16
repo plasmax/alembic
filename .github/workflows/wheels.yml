@@ -14,9 +14,11 @@ jobs:
       matrix:
         include:
           - python-version: 2.7
+            pyver: 2.7
             # plat: manylinux2010_x86_64
             # usdimage: 2019.9
           - python-version: 3.7
+            pyver: 3.7
             # plat: manylinux_2_17_x86_64
             # usdimage: 2021.6
 
@@ -28,7 +30,7 @@ jobs:
 
       # Use the alembic build action of this repo
       - name: Build Alembic Wheel using Docker
-        uses: ./.github/actions/build-python${{ matrix.python-version }}
+        uses: ./.github/actions/build-python${{ matrix.pyver }}
 
       # Upload wheel as artifact
       - uses: actions/upload-artifact@v2
