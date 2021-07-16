@@ -26,11 +26,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Use the alembic build action of this repo
+      # Use the alembic build action of this repo
+      - name: Build Alembic Wheel using Docker
         env:
           PLAT: ${{ matrix.plat }}
           USDIMAGE: ${{ matrix.usdimage }}
         uses: ./.github/actions/build-aswf
+
       # Upload wheel as artifact
       - uses: actions/upload-artifact@v2
         with:

@@ -1,9 +1,7 @@
 # action.yml
-name: 'Python manylinux wheel based on awsf/ci-usd'
+name: 'Build Python manylinux wheel'
 author: 'Stefan Jeske, Max Last'
 description: 'Build manylinux wheels for a Python package'
 runs:
   using: 'docker'
-  with:
-    build-args: USDIMAGE=$USDIMAGE PLAT=$PLAT
-  image: 'Dockerfile'
+  image: 'Dockerfile.$USDIMAGE'
