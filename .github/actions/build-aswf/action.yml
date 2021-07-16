@@ -7,11 +7,14 @@ inputs:
   usd-image:
     description: 'Which ci-usd image to use, e.g. 2019.9 or 2021.6'
     required: true
+  plat:
+    description: 'What flavour of manylinux wheel to output, e.g. manylinux2010_x86_64 or manylinux_2_17_x86_64'
+    required: true
 
 runs:
   using: "composite"
   steps:
     - run: echo Hello ${{ inputs.usd-image }}.
       shell: bash
-    - run: echo Hello ${{ inputs.usd-image }}.
+    - run: echo Hello ${{ inputs.plat }}.
       shell: bash
