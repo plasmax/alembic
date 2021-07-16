@@ -2,4 +2,12 @@
 name: 'Build Python manylinux wheel'
 author: 'Stefan Jeske, Max Last'
 description: 'Build manylinux wheels for a Python package'
-run: echo $USDIMAGE $PLAT
+
+inputs:
+  usd-image:
+    description: 'Which ci-usd image to use, e.g. 2019.9 or 2021.6'
+    required: true
+
+runs: 
+  using: 'docker'
+  image: 'Dockerfile.${{ inputs.usd-image }}'
