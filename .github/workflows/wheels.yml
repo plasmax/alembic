@@ -3,16 +3,6 @@ name: Wheels
 on: [push]
 
 jobs:
-  py27:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build Alembic Wheel using Docker
-        uses: ./.github/actions/build-python2.7
-      - uses: actions/upload-artifact@v2
-        with:
-          name: wheel
-          path: dist/*-manylinux*.whl
   py37:
     runs-on: ubuntu-latest
     steps:
