@@ -1,22 +1,11 @@
-FROM aswf/ci-usd:2019.9
-
-# install auditwheel and dependency
-RUN yum install -y patchelf
-RUN pip install auditwheel
-
-# build imath dependency (although this comes with ci-usd so should be unnecessary)
-RUN git clone --depth 1 --branch v3.0.4 https://github.com/AcademySoftwareFoundation/Imath.git /Imath
-RUN mkdir /imathbuild
-RUN cd /imathbuild
-RUN cmake /Imath -DPYTHON=ON
-RUN make
-RUN make install
+FROM quay.io/pypa/manylinux2010_x86_64:2021-02-06-3d322a5
 
 # Setup dev environment
+
+# WORKDIR /github/workspace
 ENV PLAT manylinux2010_x86_64
 
 # Copy build script and build
 COPY build_alembic.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
